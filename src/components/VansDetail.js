@@ -4,12 +4,13 @@ import "../server";
 function VansDetail() {
   const params = useParams();
   const [van, setdata] = useState(null);
+  /* eslint-disable */
   useEffect(() => {
     fetch(`/api/vans/${params.id}`)
       .then((response) => response.json())
       .then((data) => setdata(data.vans));
-  }, [params.id]);
-  console.log(params);
+  }, []);
+  /* eslint-enable */
   return (
     <div className="van-detail-container">
       {van ? (
