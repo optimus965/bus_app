@@ -36,7 +36,7 @@ export async function loginaction({ request }) {
 
   try {
     const user = await fakeLoginUser({ email, password });
-
+    localStorage.setItem("loggedin", true);
     const response = redirect(`${url}`);
     response.body = true;
     return response;
